@@ -65,7 +65,7 @@ public class CGbBlChangeDialog extends JDialog implements ActionListener {
     pWest.setBackground (Color.yellow);
     pWest.setMinimumSize (new Dimension (20,20));
     pWest.setPreferredSize (new Dimension (20,20));
-    this.getContentPane ().add (pWest, blay.WEST);
+    this.getContentPane ().add (pWest, BorderLayout.WEST);
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
   }
 
@@ -80,8 +80,10 @@ public class CGbBlChangeDialog extends JDialog implements ActionListener {
     }
     Checkbox choice = cbg.getSelectedCheckbox ();
     if (iBl > 0){
-      for (Enumeration en = CControlCenter.getBlockList ().elements (); en.hasMoreElements ();){
-        CBlock bl = (CBlock) en.nextElement ();
+      Iterator iter = CControlCenter.getBlockList ().iterator();
+      while(iter.hasNext())
+      {
+        CBlock bl = (CBlock) iter.next();
         if (bl.getBlNumber () == iBl){
           bFound = true;
           break;

@@ -138,9 +138,10 @@ public class CChainExec implements Runnable, CFeedbackportListener {
           return;
         }
         else {
-          for (Enumeration en = CControlCenter.getBlockList ().elements ();
-          en.hasMoreElements ();){
-            CBlock bl = (CBlock)en.nextElement ();
+          Iterator iter = CControlCenter.getBlockList ().iterator();
+          while(iter.hasNext())
+          {
+            CBlock bl = (CBlock)iter.next();
             if (bl.getBlNumber () == iParsed){
               if (bl.getOwner ().equals (chain.getName ())
               && bl.getState() == CBlock.BLOCK_EXECUTED)

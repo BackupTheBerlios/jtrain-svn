@@ -31,6 +31,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
@@ -630,9 +631,10 @@ public class StepEditorPane extends JPanel implements ItemListener {
           step.setNextStepCondition ("timer");
         }
         if (ch.getSelectedIndex () == 3){
-          for (Enumeration en = CControlCenter.getBlockList ().elements ();
-            en.hasMoreElements ();){
-              CBlock tblock = (CBlock) en.nextElement ();
+          Iterator iter = CControlCenter.getBlockList().iterator();
+          while(iter.hasNext())
+          {
+              CBlock tblock = (CBlock) iter.next();
               if (tblock.getBlNumber () == iInp){
                 bFound = true;
                 step.setNextStepCondition ("block " + iInp);
@@ -748,9 +750,9 @@ public class StepEditorPane extends JPanel implements ItemListener {
             //This Block should never be found!
             i = -1;
           }
-          for (Enumeration en = CControlCenter.getBlockList ().elements ();
-            en.hasMoreElements ();){
-            CBlock block = (CBlock) en.nextElement ();
+          Iterator iter = CControlCenter.getBlockList().iterator();
+          {
+            CBlock block = (CBlock) iter.next();
             if (block.getBlNumber () == i){
               bFound = true;
               break;
@@ -796,9 +798,10 @@ public class StepEditorPane extends JPanel implements ItemListener {
           i = Integer.parseInt (st);
         }
         catch (Exception ex){}
-        for (Enumeration en = CControlCenter.getBlockList ().elements ();
-          en.hasMoreElements ();){
-          CBlock block = (CBlock) en.nextElement ();
+        Iterator iter = CControlCenter.getBlockList ().iterator();
+        while(iter.hasNext())
+        {
+          CBlock block = (CBlock) iter.next();
           if (block.getBlNumber () == i){
             bFound = true;
             step.getJobs ().add (CLang.s48 + i);

@@ -7,7 +7,8 @@ author: Werner Kunkel, adapted from Torsten Vogt
 */
 
 
-public class CFeedbackportEvent extends java.util.EventObject {
+public class CFeedbackportEvent extends java.util.EventObject 
+{
 
    private int iPort      = 0;
    private int iState     = 0;

@@ -287,10 +287,11 @@ public final class CGbBlockEditor extends CGbEdit implements ActionListener{
     }
     else{
       for (iFound = 1; !bFound; iFound ++){
-        for (Enumeration en = CControlCenter.getBlockList ().elements ();
-                          en.hasMoreElements ();){
+        Iterator iter = CControlCenter.getBlockList ().iterator();
+        while(iter.hasNext())
+        {
           bFound = true;
-          bltmp = (CBlock) en.nextElement ();
+          bltmp = (CBlock) iter.next();
           if (iFound == bltmp.getBlNumber ()){
             bFound = false;
             break;

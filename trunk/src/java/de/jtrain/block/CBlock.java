@@ -49,9 +49,10 @@ public class CBlock implements Serializable {
   public boolean setBlockNeeded (int iNr){
     boolean bOkay = false;
     CBlock bltmp;
-    for (Enumeration en = CControlCenter.getBlockList ().elements ();
-    en.hasMoreElements();){
-      bltmp = (CBlock) en.nextElement();
+    Iterator iter = CControlCenter.getBlockList().iterator();
+    while(iter.hasNext())
+    {
+      bltmp = (CBlock) iter.next();
       if (bltmp.getBlNumber() == iNr){
         bOkay = true;
         break;

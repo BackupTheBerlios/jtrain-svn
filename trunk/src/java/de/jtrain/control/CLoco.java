@@ -9,32 +9,49 @@ import java.io.Serializable;
 
 import de.jtrain.com.CCommand;
 import de.jtrain.com.CCommandPipe;
-import de.jtrain.srcp.Command;
 import de.jtrain.srcp.SRCP;
 
 public class CLoco implements Serializable{
   //we need that all:
-  private static String sHead         = "GL";
-  private static String sNumServer    = "1";
-  private String sName                = null;
-  private String sProtocoll           = null;
-  private int iAddr                   = 0;
-  private transient int iDirection    = 0;
-  private transient int iSpeed        = 0;
-  private int iSpeedsteps             = 0;
-  private transient int iFunc         = 0;
-  private int iNrOF                   = 0;
-  private transient int iF1           = 0;
-  private transient int iF2           = 0;
-  private transient int iF3           = 0;
-  private transient int iF4           = 0;
-  private int iAccTime                = 0;
-  private int iDecTime                = 0;
-  private boolean bAccByJBahn         = false;
-  private int iMaxSpeed               = 0;
-  private transient boolean bLocoBusy = false;
-  private boolean changed, speedChanged, dirChanged, funcChanged, f1Changed, f2Changed, f3Changed, f4Changed;
-  private boolean inited;
+  private static final String sHead = "GL";
+  private String sNumBus;
+  private String sName;
+  private String sProtocoll;
+  private int iAddr;
+  private transient int iDirection;
+  private transient int iSpeed;
+  private int iSpeedsteps;
+  private transient int iFunc;
+  private int iNrOF;
+  private transient int iF1;
+  private transient int iF2;
+  private transient int iF3;
+  private transient int iF4;
+  private int iAccTime;
+  private int iDecTime;
+  private boolean bAccByJBahn;
+  private int iMaxSpeed;
+  private transient boolean bLocoBusy;
+  private transient boolean changed, speedChanged, dirChanged, funcChanged, f1Changed, f2Changed, f3Changed, f4Changed;
+  private transient boolean inited;
+  
+  public CLoco()
+  {
+  	
+  }
+  
+  public CLoco(String name, String protocol, int address, int speed,
+  		         int speedsteps, int maxspeed, int nof, String busnum)
+  {
+     this.sName = name;
+     this.sProtocoll = protocol;
+     this.iAddr = address;
+     this.iSpeed = speed;
+     this.iSpeedsteps = speedsteps;
+     this.iMaxSpeed = maxspeed;
+     this.iNrOF = nof;
+     this.sNumBus = busnum;
+  }
 
   public static String getHead (){
     return sHead;
@@ -63,6 +80,16 @@ public class CLoco implements Serializable{
   public void setAddr (int i)
   {
   	  		iAddr = i;
+  }
+  
+  public String getBusNumber()
+  {
+  	  return sNumBus;
+  }
+  
+  public void setBusNumber(String busnum)
+  {
+  	  this.sNumBus = busnum;
   }
 
   public int getDirection (){
@@ -228,7 +255,7 @@ public class CLoco implements Serializable{
   			{
   				if(!inited)
   				{
-  					sInit = "INIT " + sNumServer + " " + sHead + " "+ iAddr + " " + sProtocoll.charAt(0) + " " + sProtocoll.charAt(1) + " " + iMaxSpeed + " " + (iNrOF+1) + "\n";
+  					sInit = "INIT " + sNumBus + " " + sHead + " "+ iAddr + " " + sProtocoll.charAt(0) + " " + sProtocoll.charAt(1) + " " + iMaxSpeed + " " + (iNrOF+1) + "\n";
   					com.setCommand(sInit);
   					CCommandPipe.putTcCommand (com);
   					inited = true;
@@ -240,7 +267,7 @@ public class CLoco implements Serializable{
   				sSub = sSub + " " + (f2Changed ? String.valueOf(iF2) : "=");
   				sSub = sSub + " " + (f3Changed ? String.valueOf(iF3) : "=");
   				sSub = sSub + " " + (f4Changed ? String.valueOf(iF4) : "=");
-  				sLcs = ("SET " + sNumServer + " " + sHead + " " + iAddr + " " + sDir + " "
+  				sLcs = ("SET " + sNumBus + " " + sHead + " " + iAddr + " " + sDir + " "
   						+ sSpeed + " " + sSub + "\n");
   			}
   			else

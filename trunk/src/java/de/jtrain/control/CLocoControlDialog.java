@@ -43,9 +43,11 @@ public class CLocoControlDialog extends JDialog implements ActionListener {
     jPCenter.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
     locoList= new JComboBox();
     /*Was ist, wenn die Liste leer ist? */
-    for (Enumeration en = CControlCenter.getLocoList().elements ();
-      en.hasMoreElements ();)
-        locoList.addItem(((CLoco)en.nextElement()).getName());
+    Iterator iter = CControlCenter.getLocoList().iterator();
+    while(iter.hasNext())
+    {
+        locoList.addItem(((CLoco)iter.next()).getName());
+    }
     jPCenter.add(locoList);
     getContentPane().add(jPCenter, BorderLayout.CENTER);
 
@@ -77,9 +79,10 @@ public class CLocoControlDialog extends JDialog implements ActionListener {
       return;
     }
     if (o == jBOk){
-      for (Enumeration en = CControlCenter.getLocoList ().elements();
-        en.hasMoreElements();){
-        Object ob = en.nextElement ();
+      Iterator iter = CControlCenter.getLocoList ().iterator();
+      while(iter.hasNext())
+      {
+        Object ob = iter.next();
         if (((CLoco)ob).getName().equals(locoList.getSelectedItem())){
           if (((CLoco)ob).getLocoBusy ()== true){
             JOptionPane.showMessageDialog(

@@ -86,9 +86,11 @@ implements ActionListener, ItemListener{
     else if (iJob == CChain.LOCOCHG){
       sJob = "Lok wechseln";
       chloco = new Choice ();
-      for (Enumeration en = CControlCenter.getLocoList().elements();
-      en.hasMoreElements();)
-        chloco.add (((CLoco) en.nextElement ()).getName ());
+      Iterator iter = CControlCenter.getLocoList().iterator();
+      while(iter.hasNext())
+      {
+        chloco.add (((CLoco) iter.next()).getName ());
+      }
       jLCSouth.setText ("Neue Lok:");
       jPCSouth.add (jLCSouth);
       jPCSouth.add (chloco);
@@ -96,9 +98,10 @@ implements ActionListener, ItemListener{
     this.setTitle (sChain + sJob);
     jLHead.setHorizontalAlignment (SwingConstants.CENTER);
     c.add (jLHead, BorderLayout.NORTH);
-    for (Enumeration en = CControlCenter.getChainList ().elements ();
-    en.hasMoreElements();){
-      CChain tchain = (CChain) en.nextElement ();
+    Iterator iter = CControlCenter.getChainList ().iterator();
+    while(iter.hasNext())
+    {
+      CChain tchain = (CChain) iter.next();
       chc.add (tchain.getName ());
     }
     chc.addItemListener (this);
@@ -110,7 +113,7 @@ implements ActionListener, ItemListener{
     jPCenter.add (jPCNorth);
     jPCSouth.setBackground (Color.yellow);
     jPCenter.add (jPCSouth);
-    c.add (jPCenter, bl.CENTER);
+    c.add (jPCenter, BorderLayout.CENTER);
     jBAbort.addActionListener (this);
     jBAbort.setMnemonic ('a');
     jPSouth.add (jBAbort);
@@ -123,9 +126,10 @@ implements ActionListener, ItemListener{
   }
 
   private CChain getChain (String s){
-    for (Enumeration en = CControlCenter.getChainList ().elements ();
-    en.hasMoreElements ();){
-      CChain tchain = (CChain) en.nextElement ();
+    Iterator iter = CControlCenter.getChainList ().iterator();
+    while(iter.hasNext())
+    {
+      CChain tchain = (CChain) iter.next();
       if (tchain.getName ().equals (s))
         return tchain;
       }
@@ -213,9 +217,11 @@ implements ActionListener, ItemListener{
         if (cbAll.getState() == false)
           chain.printChain ();
         else {
-          for (Enumeration en = CControlCenter.getChainList ().elements ();
-          en.hasMoreElements ();)
-            ((CChain) en.nextElement ()).printChain ();
+          Iterator iter = CControlCenter.getChainList ().iterator();
+          while(iter.hasNext())
+          {
+            ((CChain) iter.next()).printChain ();
+          }
         }
       }
       else if (iJob == CChain.DELETE){

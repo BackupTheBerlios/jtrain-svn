@@ -20,6 +20,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -159,9 +160,10 @@ public class CGbExec extends CGb implements CTurnoutListener, CBlockListener,
       gbtmp.repaint ();
     }
     CBlock bl = null;
-    for (Enumeration en = CControlCenter.getBlockList ().elements ();
-         en.hasMoreElements ();){
-      bl = (CBlock) en.nextElement ();
+    Iterator iter = CControlCenter.getBlockList ().iterator();
+    while(iter.hasNext())
+    {
+      bl = (CBlock) iter.next();
       if (bl.getBlockInUseOnStart ())
         doBlJobs (bl.getBlNumber ());
     }
@@ -286,9 +288,10 @@ public class CGbExec extends CGb implements CTurnoutListener, CBlockListener,
 
   private final void checkBlockWaiting (int iBlNr){
     CBlock bl       = null;
-    for (Enumeration en = CControlCenter.getBlockList ().elements ();
-                        en.hasMoreElements ();){
-      bl = (CBlock) en.nextElement ();
+    Iterator iter = CControlCenter.getBlockList ().iterator();
+    while(iter.hasNext())
+    {
+      bl = (CBlock) iter.next();
       if (bl.getState () == CBlock.BLOCK_REQUESTED){
         if (checkFree (bl.getBlNumber ())){
           bl.setState (CBlock.BLOCK_FREE);

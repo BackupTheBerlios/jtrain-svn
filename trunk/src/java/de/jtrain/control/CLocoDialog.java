@@ -62,9 +62,11 @@ public class CLocoDialog extends JDialog implements ActionListener{
     getContentPane().add (jPWest, BorderLayout.WEST);
 
     chc   = new Choice();
-    for (Enumeration en = CControlCenter.getLocoList ().elements ();
-      en.hasMoreElements ();)
-        chc.add (((CLoco)en.nextElement ()).getName());
+    Iterator iter = CControlCenter.getLocoList ().iterator();
+    while(iter.hasNext())
+    {
+        chc.add (((CLoco)iter.next()).getName());
+    }
     jPCenter = new JPanel();
     jPCenter.add(chc);
     this.getContentPane().add(jPCenter, BorderLayout.CENTER);
@@ -118,9 +120,10 @@ public class CLocoDialog extends JDialog implements ActionListener{
          cle.show ();
       }
       if (lcedit.isSelected()){
-        for (Enumeration en = CControlCenter.getLocoList ().elements ();
-        en.hasMoreElements ();){
-          Object ob = en.nextElement ();
+        Iterator iter = CControlCenter.getLocoList ().iterator();
+        while(iter.hasNext())
+        {
+          Object ob = iter.next();
           if (((CLoco)ob).getName ().equals (chc.getSelectedItem ())){
             if (((CLoco)ob).getLocoBusy ()== true){
               JOptionPane.showMessageDialog (
@@ -138,20 +141,25 @@ public class CLocoDialog extends JDialog implements ActionListener{
         }
       }
       if (lcdel.isSelected()){
-        for (Enumeration en = CControlCenter.getLocoList ().elements ();
-        en.hasMoreElements ();){
-          Object ob = en.nextElement ();
-          if (((CLoco)ob).getName ().equals (chc.getSelectedItem ())){
-            if (((CLoco)ob).getLocoBusy ()== true){
+        Iterator iter = CControlCenter.getLocoList ().iterator();
+        while(iter.hasNext())
+        {
+          Object ob = iter.next();
+          if (((CLoco)ob).getName ().equals (chc.getSelectedItem ()))
+          {
+            if (((CLoco)ob).getLocoBusy () == true)
+            {
               JOptionPane.showMessageDialog(
                 this,
                 "Achtung!\nKeine Bearbeitung möglich,\n"+
-		"da die Lok in Benutzung ist!",
+		          "da die Lok in Benutzung ist!",
                 "Warnung",
                 JOptionPane.INFORMATION_MESSAGE);
             }
-            else {
-              CControlCenter.getLocoList ().removeElement (ob);
+            else 
+            {
+            	iter.remove();
+//              CControlCenter.getLocoList ().remove (ob);
             }
           }
           JTrain.mf.setEditmode (false);

@@ -42,9 +42,11 @@ public class CChainFrameDialog extends JDialog implements ActionListener {
     this.getContentPane ().setBackground (Color.yellow);
     this.getContentPane ().setLayout (bl);
     chc.add ("< alle >");
-    for (Enumeration en = CControlCenter.getChainList ().elements ();
-    en.hasMoreElements ();)
-      chc.add (((CChain) en.nextElement ()).getName ());
+    Iterator iter = CControlCenter.getChainList ().iterator();
+    while(iter.hasNext())
+    {
+      chc.add (((CChain) iter.next()).getName ());
+    }
     this.getContentPane ().add (jLab, BorderLayout.NORTH);
     jPWest.setBackground (Color.yellow);
     jPCenter.add (jPWest);
@@ -73,9 +75,10 @@ public class CChainFrameDialog extends JDialog implements ActionListener {
     if (o == jBOk){
       JFrame ce = null;
       String s = chc.getSelectedItem ();
-      for (Enumeration en = CControlCenter.getChainList ().elements ();
-        en.hasMoreElements ();){
-          CChain tchain = (CChain) en.nextElement ();
+      Iterator iter = CControlCenter.getChainList ().iterator();
+      while(iter.hasNext())
+      {
+          CChain tchain = (CChain) iter.next();
           if (s.equals ("< alle >") || tchain.getName ().equals (s)){
             ce = new CChainFrame (tchain, parent);
             ce.show ();

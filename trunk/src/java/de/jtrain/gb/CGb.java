@@ -255,9 +255,10 @@ public class CGb extends JFrame
   public final CBlock getBlock (int iBlNr){
     CBlock bl = null;
     if (iBlNr > 0){
-      for (Enumeration en = CControlCenter.getBlockList ().elements ();
-                          en.hasMoreElements();){
-        bl = (CBlock) en.nextElement();
+      Iterator iter = CControlCenter.getBlockList ().iterator();
+      while(iter.hasNext())
+      {
+        bl = (CBlock) iter.next();
         if (bl.getBlNumber () == iBlNr){
           return bl;
         }

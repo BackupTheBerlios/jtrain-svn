@@ -45,9 +45,10 @@ implements ActionListener, ItemListener {
     this.getContentPane ().setLayout (bl);
     chc.add ("<keine Lok>");
     if (!CControlCenter.getLocoList ().isEmpty()){
-      for (Enumeration en = CControlCenter.getLocoList ().elements ();
-      en.hasMoreElements ();){
-        loco = (CLoco) en.nextElement ();
+      Iterator iter = CControlCenter.getLocoList ().iterator();
+      while(iter.hasNext())
+      {
+        loco = (CLoco) iter.next();
         chc.add (loco.getName());
       }
     }
@@ -82,9 +83,10 @@ implements ActionListener, ItemListener {
       chc.removeAll ();
       chc.add ("<keine Lok>");
       if (!CControlCenter.getLocoList ().isEmpty ()){
-        for (Enumeration en = CControlCenter.getLocoList ().elements ();
-        en.hasMoreElements ();){
-          CLoco loco = (CLoco) en.nextElement ();
+        Iterator iter = CControlCenter.getLocoList ().iterator();
+        while(iter.hasNext())
+        {
+          CLoco loco = (CLoco) iter.next();
           chc.add (loco.getName());
         }
       }
@@ -93,9 +95,10 @@ implements ActionListener, ItemListener {
       jLabnew.setText ("vorhandene Kette:");
       chc.removeAll ();
       if (!CControlCenter.getChainList ().isEmpty ()){
-        for (Enumeration en = CControlCenter.getChainList ().elements ();
-        en.hasMoreElements ();){
-          CChain chain = (CChain) en.nextElement ();
+        Iterator iter = CControlCenter.getChainList ().iterator();
+        while(iter.hasNext())
+        {
+          CChain chain = (CChain) iter.next();
           chc.add (chain.getName ());
         }
       }
@@ -114,9 +117,10 @@ implements ActionListener, ItemListener {
       Checkbox choice = cbg.getSelectedCheckbox();
       if (choice.equals (cbNew)){
         String s = chc.getSelectedItem ();
-        for (Enumeration en = CControlCenter.getLocoList ().elements();
-        en.hasMoreElements ();){
-          CLoco tloco = (CLoco) en.nextElement ();
+        Iterator iter = CControlCenter.getLocoList ().iterator();
+        while(iter.hasNext())
+        {
+          CLoco tloco = (CLoco) iter.next();
           if (tloco.getName ().equals (s)){
             ce = new CChainEditor (tloco);
             break;
@@ -127,9 +131,10 @@ implements ActionListener, ItemListener {
       }
       if (choice.equals (cbEdit)){
         String s = chc.getSelectedItem ();
-        for (Enumeration en = CControlCenter.getChainList ().elements ();
-        en.hasMoreElements ();){
-          CChain tchain = (CChain) en.nextElement ();
+        Iterator iter = CControlCenter.getChainList ().iterator();
+        while(iter.hasNext())
+        {
+          CChain tchain = (CChain) iter.next();
           if (tchain.getName ().equals (s)){
             ce = new CChainEditor (tchain);
             break;
