@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Programmfilosofie
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="program"><H1 align=center>1.Programmfilosofie</H1></A>
+<A name="lizenz"><H3>1.1 Lizenz</H3></A>
+Dieses Programm ist unter der GPL ver&ouml;ffentlicht (siehe GPL.TXT). Das
+bedeutet vereinfacht ausgedr&uuml;ckt, dass Sie es f&uuml;r private Zwecke
+kostenlos benutzen und kopieren k&ouml;nnen. Sie d&uuml;rfen den Quellcode
+auch ver&auml;ndern, m&uuml;ssen die &Auml;nderungen aber wieder
+&ouml;ffentlich zug&auml;nglich machen.<br>
+ACHTUNG:<br>
+Obwohl das Programm von mir vor der Ver&ouml;ffentlichung ausgiebig getestet
+wurde, kann ich als  Autor keine Verantwortung f&uuml;r Sch&auml;den
+&uuml;bernehmen, die durch die Benutzung dieses Programm mittelbar oder
+unmittelbar entstehen, insbesondere Sch&auml;den an der Modellbahn durch
+Unf&auml;lle oder &auml;hnliches.
+<H3>1.2 Warum<A name ="java"> JAVA</A>, warum <A name ="srcp1">SRCP?</A></H3>
+Nun, es geht mir um eine m&ouml;glichst breite Verwendbarkeit meines
+Programms. JAVA als Sprache habe ich gew&auml;hlt, da es frei verf&uuml;gbar
+ist und sowohl unter LINUX als auch den Microsoft- Betriebssystemen ab Win95
+funktioniert. Ganz nebenbei habe ich so diese Sprache erlernt ;-)<br>
+<a href="http://srcpd.sourceforge.net/srcp/srcp-old.html">
+SRCP</a> -Abk&uuml;rzung f&uuml;r Simple Railroad Command Protocol- ist eine
+Protokollspezifikation f&uuml;r (Software-)Server und Clients, um
+Modellbahnen zu steuern. Sinn des Ganzen ist eine weitgehende Abstraktion
+von der verwendeten Hardware. Alle Software ist f&uuml;r den Anwender -bis
+auf die Downloadkosten- gratis erh&auml;ltlich (siehe auch
+<A href="jt_2.htm#srcp2">2.1</A>).<br>
+<H3>1.3 Die 4 <A name="ebene">Ebenen</A></H3>
+Oberstes Ziel bei der Entwicklung war die M&ouml;glichkeit, programmierte
+automatische Zugfahrten gleichzeitig mit handgesteuerten Fahrten zu
+erm&ouml;glichen.<br>
+Deshalb ist die Steuerung auf 4 Ebenen organisiert:<br>
+<H4>1.3.1. Ebene 1: Signale ,Weichen und Loks</H4>
+Sie k&ouml;nnen Signale und Weichen durch anklicken mit der Maus stellen.
+Diese Ebene entspricht weitgehend der "konventionellen" Steuerung mit dem
+zus&auml;tzlichen Vorteil, dass Sie sich nicht die Nummern von Weichen und
+Signalen merken müssen.<br>
+Eine Loksteuerung habe ich ebenfalls vorgesehen. Pers&ouml;nlich bevorzuge
+ich die Steuerung mit "echten" Drehreglern, aber da manche SRCP-Server
+-bis auf einen Booster- ohne weitere Hardware auskommen, wollte ich auch
+daf&uuml;r eine Steuerung bereitstellen. Die Beschleunigung der Loks kann
+wahlweise durch JTrain oder den Lokdekoder gesteuert werden.<br>
+Sie k&ouml;nnen theoretisch beliebig viele Gleisbilder gleichzeitig offen
+haben und beliebig viele Lokregler, wenn die Nerven mitmachen...
+<A name="block"><H4>1.3.2. Ebene 2: Blockstrecken</H4></A>
+Grundlage der automatischen Steuerung ist die Einteilung der Modellbahn in
+Blockstrecken sehr &auml;hnlich dem Original. Sinnvollerweise unterscheidet
+man Weichenbl&ouml;cke und Streckenbl&ouml;cke. Das erm&ouml;glicht, nach
+dem &Uuml;berfahren einer Weichenstrasse diese schon wieder anderen Z&uuml;gen
+zur Verf&uuml;gung zu stellen. So ist ein wesentlich dichterer Zugverkehr
+m&ouml;glich. Der hinter dem Weichenblock liegende Streckenblock wird dabei
+als Zusatzblock mit angefordert, beide werden getrennt freigegeben.<br>
+Die Blockstrecken k&ouml;nnen Sie per Mausklick auf das Blockfeld anfordern
+und freigeben. Wird die Blockstrecke zugeteilt, erscheint "User" im
+Blockfeld und der Block wird rot.<br>
+Die Erstellung der Blockstrecken wird durch einen Assistenten erleichtert (
+das hoffe ich zumindest...), die Verwaltung durch die M&ouml;glichkeit
+der individuellen Farbwahl ebenfalls.<br>
+Dabei enthalten die Blockstrecken "automatisch" die notwendigen
+Weichen- und Signalschaltungen, ein Router findet den Weg zwischen erstem und
+letztem Blockelement usw.
+<A name="fstrasse"><H4>1.3.3. Ebene 3: Fahrstrassen: f&uuml;r und wider</H4>
+</A>
+Es besteht die M&ouml;glichkeit, Fahrstrassen anzufordern und freizugeben.
+Eine Fahrstrasse ist hierbei eine Gruppe von Blockstrecken, die nacheinander
+durchfahren werden.<br><br>
+Vorteile der Fahrstrassentechnik:<br>
+einfach zu programmieren (f&uuml;r Sie und mich ;-))<br>
+komfortabel - Sie fordern eine Fahrstrasse an und alle Weichen und Signale
+stehen richtig!<br><br>
+Nachteile der Fahrstrassentechnik:<br>
+Erstmal m&uuml;ssen Sie Ihre ganze Anlage in Gleisbilder eingeben und dann in
+Blockstrecken einteilen :-(<br>
+Blockadegefahr: Eine Fahrstrasse blockiert, solange sie besteht, alle Kreuzungen
+und Abzweigungen auf ihrem Weg!<br><br>
+Ich habe dennoch die Fahrstrassentechnik in JTrain aufgenommen, da sie
+weniger Aufwand bei der Erstellung erfordert als die
+<H4>1.3.4. Ebene 4: <A name="automat">Automatikfahrt</A></H4>
+Hierbei wird eine Kette von Steps (=Schritten) erzeugt, die nacheinander
+abgearbeitet werden. Jeder Step "kennt" seinen Arbeitsauftrag -was soll
+passieren-, seinen Nachfolger und die Bedingung f&uuml;r den n&auml;chsten
+Step.<br>
+Dabei sind einfache Verzweigungen machbar. Das erm&ouml;glicht die Reaktion
+auf unterschiedliche Situationen (z.B.Block benutzt-:langsam abbremsen/Block
+frei-:weiterfahren/beschleunigen). <br>
+Es bleibt Ihnen &uuml;berlassen, ob die Automatik Lokbefehle enth&auml;lt
+und somit auch die Lok steuert, oder ob sie nur die Blockstrecken anfordert
+und freigibt und Sie per Hand die Lok steuern.<br>
+Leider ist damit ein nicht unerheblicher Programmieraufwand verbunden, auch
+f&uuml;r Sie. Dennoch lohnt der Einarbeitungsaufwand: Wenn dann endlich die
+ersten Z&uuml;ge vollautomatisch verkehren, sich im Schattenbahnhof ein
+freies Gleis suchen, nach einer Zeit wieder auftauchen etc., macht das
+einfach Spass (IMHO, meine Frau sieht das leider v&ouml;llig anders...).<br>
+<br>
+Bitte nutzen Sie die der Distribution beiliegenden Beispieldateien, um sich
+ein Bild von den M&ouml;glichkeiten und einer sinnvollen Vorgehensweise beim
+Testen von JTrain zu machen!<br><br>
+Viel Spass am Hobby!
+</BODY>
+</HTML>
+

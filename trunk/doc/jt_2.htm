@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Voraussetzungen
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="voraus"><H1 align=center>2. Voraussetzungen</H1></A>
+<A name="hardware"><H3>2.1 Hardware</H3></A>
+2.1.1 Die Bahn<br>
+Die Modellbahn benötigt folgende Ausstattung:<br>
+<UL>
+<LI>Alle Loks und Magnetartikel, die von JTrain gesteuert werden sollen,
+m&uuml;ssen mit Digitaldekodern ausgestattet sein.</LI>
+<LI>Signale m&uuml;ssen nicht tats&auml;chlich vorhanden sein, sie k&ouml;nnen
+nach und nach dazugestellt werden, wenn es die Finanzlage erlaubt. Auch dann
+gen&uuml;gen die preiswerteren Modelle ohne Fahrstrombeeinflussung, da der
+Fahrstrom bei Digitalanlagen <i>nicht</i> geschaltet wird.</LI>
+<LI>Stromversorgung: ein weites Thema! Sie sollte ausreichend sein, d.h.
+f&uuml;r je 2-3 Z&uuml;ge mit Licht , die <i>gleichzeitig</i> fahren, wird
+ein Booster mit 2,5 - 3 Ampere Ausgangsstrom ben&ouml;tigt (H0). Verwenden Sie
+Booster h&ouml;herer Leistung, beachten Sie bitte unbedingt, dass diese
+nicht der VDE-Norm ensprechen und teilen Sie den Strom in mehrere Stromkreise
+mit je 3 Ampere. Keine Versicherung zahlt, wenn Sie Ihre Wohnung mit einem
+12 A-Booster abfackeln!</LI>
+<LI>JTrain ist es prinzipiell egal, mit welchem Digitalsystem sie fahren. Es
+gibt z.Zt. Server f&uuml;r das M&Auml;RKLIN- Interface, die Intellibox bzw.
+das Twin-Center, sowie <A href="server">Software-Server</A> f&uuml;r die
+Motorola- und DCC- Digitalformate.</LI>
+<LI>R&uuml;ckmeldesysteme: Hier kommt es insbesondere auf den verwendeten
+<A href="srcp2">SRCP-Server</A> an. Zur Zeit werden meist s88-Systeme und
+ihre Clone sowie zum Teil Erweiterungskarten mit 8255-ICs unterst&uuml;tzt.
+</LI>
+</UL>
+F&uuml;r die Programmierung und Vorf&uuml;hrung von JTrain habe ich eine
+<A href="???">Demonstrationsanlage</A> gebaut.<br><br>
+2.1.2 Der PC<br>
+Sagen wir es mal so: alles ab 233 MHz / 64MB RAM sollte reichen, wenn nicht
+schon das Betriebssystem alles frisst. F&uuml;r die virtuelle JAVA- Maschine
+sollte man ca. 15 -20 MB RAM rechnen.
+<A name="software"><H3>2.2 Software</H3></A>
+Als Betriebssysteme kommen in Frage:<br>
+Microsoft Win95, Win98, WinME, WinNT ab 4.0/SP 5, Win2000 und WinXP  <br>
+Linux alles ab Kernel-Version 2.2 mit laufendem X-Server<br>
+F&uuml;r JTrain ben&ouml;tigen Sie ein lauff&auml;higes JAVA2 ab der Version
+1.3.0. Diese k&ouml;nnen Sie mit dem Befehl "java -version" ermitteln.
+Sollte die Version zu alt sein oder die Antwort "Befehl- oder Dateiname
+nicht gefunden" oder &auml;hnlich lauten, k&ouml;nnen Sie eine aktuelle
+JAVA- Version bei <A href="http://java.sun.com/j2se">www.sun.com</A> erhalten. Zur
+Ausf&uuml;hrung von JTrain reicht die VRE (Virtuel Runtime Environment).
+Nur, wenn Sie selbst programmieren/kompilieren wollen, brauchen Sie das JDK.
+<br>
+JTrain ist ein Client nach dem <A href ="http://srcpd.sourceforge.net/srcp/srcp-old.html">
+SRCP- Protokoll</A> (z.Zt Version 0.7.3). N&auml;here Informationen finden Sie bei
+<A href="http://www.der-moba.de/Digital">www.der-moba.de</A>.
+ Sie ben&ouml;tigen zum Betrieb einen der folgenden <A name="srcp2">
+ SRCP- Server</A> (alle frei erh&auml;ltlich bzw. Freeware):
+<UL>
+	<LI>Linux:<br>
+	<A href="http://www.vogt-it.com/OpenSource/DDL">erddcd</A>: zum Betrieb nur mit Booster<br>
+	<A href="http://srcpd.sourceforge.net">srcpd</A>: f&uuml;r die Uhlenbrock Intellibox oder das
+	M&auml;rklin -Interface 6051</LI>
+	<LI>Windows:<br>
+	<A href="http://home.snafu.de/mgrafe">DDW-Server</A>: zum Betrieb nur mit Booster<br>
+	<A href="http://www.reukauff.de/TrackONE">TrackOneServer</A>: f&uuml;r die Uhlenbrock
+	Intellibox oder das M&auml;rklin -Interface 6051</LI>
+</UL>
+<A name="vorher"><H3>2.3 Eigene Vorarbeiten</H3></A>
+Sie sollten wenigstens &uuml;ber  eine Liste mit der Zuordnung aller Weichen
+und Signale zu ihrer Digitaladresse verf&uuml;gen.<br>
+Des weiterhin halte ich es f&uuml;r sinnvoll, JTrain zweimal in zwei
+verschiedene Verzeichnisse zu installieren, zumal das Programm ja nicht so
+riesig ist. Die eine Version ist dann lauff&auml;hig mit den von mir
+beigelegten Beispieldateien. In der zweiten Version l&ouml;schen Sie bitte
+alle Dateien mit den Endungen .gbz und .dat. Dies ist dann Ihre
+Arbeitsversion.<br>
+Ich empfehle, die Anlage in der Reihenfolge des Editormen&uuml;s in JTrain
+abzubilden, da diese z.T. aufeinander aufbauen.<br>
+Die Eingabe des Gleisbildes kann direkt in JTrain erfolgen, da mit etwas
+&Uuml;bung die Maus schneller ist als Bleistift und Radiergummi. Sie
+k&ouml;nnen beliebig viele Gleisbilder eingeben. Einschr&auml;nkung:
+Fahrstrassen oder Automatikfahrten brauchen ein Gleisbild, auf dem alle dazu
+ben&ouml;tigten Bl&ouml;cke enthalten sind. W&auml;hlen Sie das Format
+f&uuml;r Ihr Gleisbild lieber zu gross, JTrain kann das Format hinterher noch
+auf das N&ouml;tige reduzieren.<br>
+Sind Sie bis hier gekommen und alle Vorraussetzungen erf&uuml;llt, kann es
+losgehen.
+</BODY>
+</HTML>

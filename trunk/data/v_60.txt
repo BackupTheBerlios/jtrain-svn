@@ -1,0 +1,149 @@
+E:\Programme\JBuilder4\jdk1.3\bin\javaw -classpath "D:\WINNT\Profiles\werner\jbproject\jttest\classes;E:\Programme\JBuilder4\jdk1.3\demo\jfc\Java2D\Java2Demo.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\i18n.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\jaws.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\rt.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\sunrsasign.jar;E:\Programme\JBuilder4\jdk1.3\lib\dt.jar;E:\Programme\JBuilder4\jdk1.3\lib\tools.jar"  JTrain 
+Name: V_60
+Lok: V 60
+Name: V_60
+Step 1
+Job : Anforderung Block 3
+Job : Timer 5000 ms
+Nächster Schritt : 2
+Schrittbedingung : timer
+Step 2
+Nächster Schritt : 3
+Schrittbedingung : without
+Step 3
+Job : Lok V 60 SPEED 15 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 4
+Schrittbedingung : contakt 11
+Step 4
+Job : Rückgabe Block 2
+Job : Anforderung Block 5
+Job : Magnetartikel 58 rot
+Nächster Schritt : 5
+Schrittbedingung : contakt 13
+Step 5
+Job : Rückgabe Block 3
+Nächster Schritt : 6
+Schrittbedingung : block 5
+Bedingter Schritt : 7
+Step 6
+Job : Lok V 60 SPEED 20 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 8
+Schrittbedingung : contakt 14
+Step 7
+Job : Lok V 60 SPEED 10 FORWARD OFF OFF OFF OFF OFF 
+Job : Timer 5000 ms
+Nächster Schritt : 15
+Schrittbedingung : timer
+Step 8
+Job : Anforderung Block 1
+Nächster Schritt : 9
+Schrittbedingung : contakt 16
+Step 9
+Job : Rückgabe Block 4
+Job : Magnetartikel 52 rot
+Nächster Schritt : 10
+Schrittbedingung : block 1
+Bedingter Schritt : 11
+Step 10
+Job : Lok V 60 SPEED 16 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 12
+Schrittbedingung : contakt 1
+Step 11
+Job : Lok V 60 SPEED 8 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 27
+Schrittbedingung : contakt 1
+Step 12
+Job : Lok V 60 SPEED 12 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 13
+Schrittbedingung : contakt 5
+Step 13
+Job : Rückgabe Block 5
+Job : Lok V 60 SPEED 5 FORWARD OFF OFF OFF OFF OFF 
+Job : Magnetartikel 51 rot
+Nächster Schritt : 26
+Schrittbedingung : without
+Step 14
+Job : Lok V 60 SPEED 0 FORWARD OFF OFF OFF OFF OFF 
+Job : Rückgabe Block 1
+Job : Timer 30000 ms
+Nächster Schritt : 32
+Schrittbedingung : timer
+Step 15
+Nächster Schritt : 16
+Schrittbedingung : block 5
+Bedingter Schritt : 17
+Step 16
+Job : Lok V 60 SPEED 20 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 8
+Schrittbedingung : contakt 14
+Step 17
+Job : Lok V 60 SPEED 11 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 18
+Schrittbedingung : contakt 14
+Step 18
+Nächster Schritt : 19
+Schrittbedingung : block 5
+Bedingter Schritt : 20
+Step 19
+Job : Lok V 60 SPEED 12 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 33
+Schrittbedingung : contakt 16
+Step 20
+Job : Lok V 60 SPEED 5 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 21
+Schrittbedingung : contakt 15
+Step 21
+Job : Lok V 60 SPEED 0 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 22
+Schrittbedingung : block 5
+Step 22
+Job : Anforderung Block 1
+Job : Lok V 60 SPEED 15 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 23
+Schrittbedingung : contakt 16
+Step 23
+Job : Rückgabe Block 4
+Nächster Schritt : 24
+Schrittbedingung : block 1
+Bedingter Schritt : 25
+Step 24
+Job : Lok V 60 SPEED 20 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 12
+Schrittbedingung : without
+Step 25
+Job : Lok V 60 SPEED 9 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 27
+Schrittbedingung : contakt 1
+Step 26
+Job : Rückgabe Block 1
+Nächster Schritt : 14
+Schrittbedingung : contakt 8
+Step 27
+Nächster Schritt : 28
+Schrittbedingung : block 1
+Bedingter Schritt : 29
+Step 28
+Job : Lok V 60 SPEED 14 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 12
+Schrittbedingung : without
+Step 29
+Job : Lok V 60 SPEED 5 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 30
+Schrittbedingung : contakt 2
+Step 30
+Job : Lok V 60 SPEED 0 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 31
+Schrittbedingung : block 1
+Step 31
+Job : Lok V 60 SPEED 8 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 13
+Schrittbedingung : contakt 5
+Step 32
+Nächster Schritt : 1
+Schrittbedingung : without
+Step 33
+Job : Rückgabe Block 4
+Job : Anforderung Block 1
+Job : Timer 3000 ms
+Nächster Schritt : 9
+Schrittbedingung : timer

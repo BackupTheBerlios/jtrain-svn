@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Der Automatikeditor
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="autoedit"><H2>3.6 Der Automatikeditor</H2></A>
+<H3>3.6.1 <A name="autoeinleit">Einleitung</A></H3>
+Bitte lesen Sie zuerst in der <A href="jt_1.htm#automat">
+Programmfilosofie</A> nach.<br>
+<H3>3.6.2 <A name="autovar">Begriffe</A></H3>
+<UL>
+<LI>aktueller Step: Dieser Begriff hat in JTrain 2 Bedeutungen:<br>
+--im Automatikeditor: der Step, der gerade editiert wird.
+Dort ist die Nummer des aktuellen Steps in der 2. Zeile 'Editor f&uuml;r
+Step ..' zu finden. Ausserdem ist der aktuelle Step auf der Stepfl&auml;che
+gelb. Im Editor wird der aktuelle Step mit Rechtsklick auf den
+Step auf der Stepfl&auml;che gewechselt.<br>
+--beim Steuern: der Step, an dem die Kette sich gerade befindet. Beim Start
+einer Kette ist zuerst Step 1 der aktuelle Step. Beim Ablauf einer Kette
+ist er gelb, alle anderen Steps weiss.</LI>
+<LI>Job: Ein Kommando, das dieser Step ausf&uuml;hrt. Zur Zeit kann das sein:
+Timer, Blockanforderung, Blockfreigabe, Lokbefehl, Magnetartikelbefehl.</LI>
+<LI>Kette: Eine Automatikfahrt besteht aus der Abfolge von Steps, die wie die
+Glieder einer Kette ineinandergreifen.</LI>
+<LI>Liste von Jobs: Jeder Step hat genau eine, die er abarbeitet, wenn er zum
+aktuellen Step wird.</LI>
+<LI>n&auml;chster Step: der Step, auf den die Kette weiterschaltet, wenn die
+Schrittbedingung erf&uuml;llt ist.</LI>
+<LI>n&auml;chster bedingter Step: Falls dieser Step programmiert wird, wird er
+zum aktuellen Step, wenn die Schrittbedingung nicht erf&uuml;llt ist.</LI>
+<LI>Schrittbedingung: Bedingung, die zutreffen muss, damit zum n&auml;chsten
+Step weitergeschaltet werden kann. Dies k&ouml;nnen sein:<br>
+<UL>
+<LI>&lt;keine Bedingung&gt;:= immer erf&uuml;llt; es wird sofort weitergeschaltet.</LI>
+<LI>R&uuml;ckelder erreicht: Der betreffende R&uuml;ckmeldekontakt wurde
+ausgel&ouml;st.</LI>
+<LI>Block zugeteilt: Ein Block, der zuvor in der Kette angefordert worden war,
+ist der Kette zugeteilt worden (das entsprechende Blockfeld im Gleisbild ist
+rot und zeigt rechts den Kettennamen).</LI>
+</UL>
+<LI>Step: Ein einzelnes Kettenglied. Jeder Step hat: Nummer, Liste von Jobs,
+n&auml;chster Step, Schrittbedingung, ev. n&auml;chster bedingter Step,
+grafische Anzeige (Quadrat mit seiner Nummer und den 'Anschl&uuml;ssen').</LI>
+<LI>Stepfl&auml;che: Fenster links neben dem Editor, auf dem die Steps
+plaziert werden. Dieses Fenster l&auml;sst sich nur ausblenden, nicht
+schliessen. Es wird im Editor zum Umschalten des aktuellen Steps
+ben&ouml;tigt.</LI>
+<LI>Timer: Jede Kette hat einen Timer, der zum Programmieren von Wartezeiten
+dient. Die Zeit wird in ms = 1/1000 sek angegeben. Der Timer wird gesetzt,
+in dem ein Step diesen Job bekommt durch 'Jobs: Timer setzen'.
+Er wird gestartet, wenn dieser Step zum aktuellen Step wird.</LI>
+<LI>Timer abgelaufen: Ein Timer, der zuvor gesetzt worden war (meist im gleichen
+Step), ist abgelaufen.</LI>
+</UL>
+<H3>3.6.3 <A name="autouse">Bedienung</A></H3>
+Nach der Anwahl des Men&uuml;punktes 'Automatikfahrt' im Men&uuml; Editoren
+erscheint zuerst ein Dialog. Dort legen Sie fest, ob Sie den Editor f&uuml;r
+eine neue oder eine vorhandene Kette &ouml;ffnen.<br>
+Neue Kette:<br>
+W&auml;hlen Sie bitte gegebenfalls noch die Lok aus. Geben Sie dann im
+folgenden Eingabedialog ein Namensk&uuml;rzel von max. 6 Zeichen als Namen
+f&uuml;r die Kette ein.<br>
+Vorhandene Kette: Das Klappmen&uuml; zeigt jetzt die vorhandenen Ketten.
+Bitte treffen Sie Ihre Wahl.<br>
+<H4>3.6.3.1 <A name="autosteparea">Die Stepfl&auml;che</A></H4>
+Dies ist das grafische Element, das den Verlauf und den Ablauf einer Kette
+anzeigt. Im Editor k&ouml;nnen die Steps (=Kettenglieder) mit der Maus
+verschoben werden. Die Verbindung zum n&auml;chsten Step wird mit einer
+gr&uuml;nen Linie dargestellt. Sollte ein Schritt f&uuml;r den Fall vorhanden
+sein, dass die Schrittbedingung nicht zutrifft (n&auml;chster bedingter
+Schritt), wird diese Verbindung mit einer roten Linie dargestellt.<br>
+Ein Rechtsklick mit der Maus auf einen Step macht diesen zum aktuellen Step
+'rechts' im Editor.
+<H4>3.6.3.2 <A name="autostep">Einen Step eingeben</A></H4>
+Die Reihenfolge der folgenden Schritte ist egal, jedoch sollte nichts
+ohne Absicht ausgelassen werden. Zur Orientierung arbeiten Sie vielleicht
+einfach von oben nach unten, aber:<br>
+Damit ein Step editiert werden kann, muss er zun&auml;chst einmal erzeugt
+worden sein. Aber auch 'n&auml;chster Step' bzw. 'n&auml;chster bedingter
+Step' m&uuml;ssen bereits vorhanden sein, denn wie soll etwas ge&auml;ndert
+oder hinzugef&uuml;gt werden, das noch gar nicht existiert? Editieren Sie z.B.
+Step 17 und wollen Step 18 als n&auml;chsten Step eintragen, so erzeugen Sie
+bitte diesen Step mit der Schaltfl&auml;che 'Neuer step', falls er noch nicht
+existiert. Die neu erzeugten Steps werden immer im linken oberen sichtbaren
+Bereich angezeigt und k&ouml;nnen dort auch gestapelt werden.<br>
+Danach w&auml;hlen Sie die Jobs aus. Dabei werden Sie bei jedem markierten
+Feld nach dem jeweils gew&uuml;nschten Wert gefragt.<br>
+Die Jobliste wird Ihnen in dem zun&auml;chst leeren Textfeld darunter
+angezeigt.<br>
+Dann geben Sie die Nummer des n&auml;chsten Steps ein. Diese Eingabe ist
+notwendig, damit die Kette nicht unterbrochen wird. Diese Eingabe muss mit
+ENTER &uuml;bernommen werden, damit auch auf der Stepfl&auml;che die
+Verbindungslinie gezegt wird.<br>
+Die Schrittbedingung w&auml;hlen Sie aus dem Klappmen&uuml;. Es ist nur
+eine Bedingung m&ouml;glich, UND - bzw. ODER- Beziehungen sind durch Reihen-
+bzw. Parallelschaltung von Steps realisierbar. Ev. n&ouml;tige Werte
+f&uuml;r die Schrittbedingung geben Sie in das Feld 'Nummer' ein<br>
+Zuletzt geben Sie ev. den n&auml;chsten bedingten Step ein. Auch diese
+Eingabe muss mit ENTER &uuml;bernommen werden, damit auch auf der
+Stepfl&auml;che die Verbindungslinie gezeigt wird.<br>
+<H4>3.6.3.3 <A name="autokette">Men&uuml; Kette</A></H4>
+In diesem Men&uuml; sind die Befehle untergebracht, die sich auf eine ganze
+Kette auswirken. Das kann jede vorhandene Kette sein.<br>
+Umbenennen: Nach Wahl einer Kette kann diese umbenannt werden.<br>
+Kopieren: Hier k&ouml;nnen Sie von einer beliebigen Kette ein Duplikat
+erstellen, was sehr viel Arbeit sparen kann.<br>
+Ausgeben: Hier wird eine menschenlesbare Version einer Kette auf dem
+stdout Ihres Rechners ausgegeben. Durch Umlenken in eine Datei oder auf den
+Drucker k&ouml;nnen Sie eine Versiom zur Dokumentation oder Fehlersuche
+erzeugen.<br>
+L&ouml;schen: Hier kann eine beliebige Kette gel&ouml;scht werden.
+<H4>3.6.3.3 <A name="autolok">Men&uuml; Lok</A></H4>
+Hier kann die Lok einer Kette gewechselt werden, sinnvoll z.B. nach
+dem Kopieren, um diese Kette auch mit einer anderen Lok zu nutzen.
+</BODY>
+</HTML>
+

@@ -1,0 +1,223 @@
+E:\Programme\JBuilder4\jdk1.3\bin\javaw -classpath "D:\WINNT\Profiles\werner\jbproject\jttest\classes;E:\Programme\JBuilder4\jdk1.3\demo\jfc\Java2D\Java2Demo.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\i18n.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\jaws.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\rt.jar;E:\Programme\JBuilder4\jdk1.3\jre\lib\sunrsasign.jar;E:\Programme\JBuilder4\jdk1.3\lib\dt.jar;E:\Programme\JBuilder4\jdk1.3\lib\tools.jar"  JTrain 
+Name: BR_58L
+Lok: BR 58
+Name: BR_58L
+Step 1
+Job : Timer 5000 ms
+Job : Anforderung Block 8
+Job : Lok BR 58 SPEED 0 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 2
+Schrittbedingung : without
+Step 2
+Nächster Schritt : 3
+Schrittbedingung : block 8
+Step 3
+Job : Lok BR 58 SPEED 5 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 4
+Schrittbedingung : contakt 11
+Step 4
+Job : Anforderung Block 5
+Job : Rückgabe Block 7
+Job : Magnetartikel 59 rot
+Nächster Schritt : 5
+Schrittbedingung : contakt 13
+Step 5
+Job : Rückgabe Block 8
+Job : Magnetartikel 59 rot
+Nächster Schritt : 6
+Schrittbedingung : block 5
+Bedingter Schritt : 7
+Step 6
+Job : Lok BR 58 SPEED 6 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 8
+Schrittbedingung : contakt 14
+Step 7
+Job : Timer 5000 ms
+Job : Lok BR 58 SPEED 4 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 15
+Schrittbedingung : timer
+Step 8
+Job : Anforderung Block 6
+Nächster Schritt : 9
+Schrittbedingung : contakt 16
+Step 9
+Job : Rückgabe Block 4
+Job : Magnetartikel 52 rot
+Nächster Schritt : 10
+Schrittbedingung : block 6
+Bedingter Schritt : 11
+Step 10
+Job : Lok BR 58 SPEED 6 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 12
+Schrittbedingung : contakt 1
+Step 11
+Job : Lok BR 58 SPEED 4 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 27
+Schrittbedingung : contakt 1
+Step 12
+Job : Lok BR 58 SPEED 3 FORWARD ON OFF OFF OFF OFF 
+Job : Rückgabe Block 5
+Nächster Schritt : 13
+Schrittbedingung : contakt 6
+Step 13
+Job : Magnetartikel 51 rot
+Job : Lok BR 58 SPEED 1 FORWARD ON OFF OFF OFF OFF 
+Job : Rückgabe Block 6
+Nächster Schritt : 14
+Schrittbedingung : contakt 7
+Step 14
+Job : Timer 30000 ms
+Job : Lok BR 588 SPEED 0 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 32
+Schrittbedingung : timer
+Step 15
+Nächster Schritt : 16
+Schrittbedingung : block 5
+Bedingter Schritt : 17
+Step 16
+Job : Lok BR 58 SPEED 6 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 8
+Schrittbedingung : contakt 14
+Step 17
+Job : Lok BR 58 SPEED 3 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 18
+Schrittbedingung : contakt 14
+Step 18
+Nächster Schritt : 19
+Schrittbedingung : block 5
+Bedingter Schritt : 20
+Step 19
+Job : Lok BR 58 SPEED 6 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 33
+Schrittbedingung : contakt 16
+Step 20
+Job : Lok BR 58 SPEED 2 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 21
+Schrittbedingung : contakt 15
+Step 21
+Job : Lok BR 58 SPEED 0 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 22
+Schrittbedingung : block 5
+Step 22
+Job : Anforderung Block 6
+Job : Lok BR 58 SPEED 6 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 23
+Schrittbedingung : contakt 16
+Step 23
+Job : Rückgabe Block 4
+Nächster Schritt : 24
+Schrittbedingung : block 6
+Bedingter Schritt : 25
+Step 24
+Nächster Schritt : 12
+Schrittbedingung : without
+Step 25
+Job : Lok BR 58 SPEED 4 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 26
+Schrittbedingung : contakt 1
+Step 26
+Nächster Schritt : 27
+Schrittbedingung : without
+Step 27
+Nächster Schritt : 28
+Schrittbedingung : block 6
+Bedingter Schritt : 29
+Step 28
+Nächster Schritt : 12
+Schrittbedingung : without
+Step 29
+Job : Lok BR 58 SPEED 2 FORWARD OFF OFF OFF OFF OFF 
+Nächster Schritt : 30
+Schrittbedingung : contakt 2
+Step 30
+Job : Lok BR 58 SPEED 0 FORWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 31
+Schrittbedingung : block 6
+Step 31
+Job : Lok BR 58 SPEED 3 FORWARD ON OFF OFF OFF OFF 
+Job : Rückgabe Block 5
+Nächster Schritt : 13
+Schrittbedingung : contakt 6
+Step 32
+Job : Anforderung Block 9,11
+Job : Timer 4000 ms
+Nächster Schritt : 34
+Schrittbedingung : timer
+Step 33
+Job : Rückgabe Block 4
+Job : Timer 3000 ms
+Job : Anforderung Block 6
+Nächster Schritt : 9
+Schrittbedingung : timer
+Step 34
+Job : Rückgabe Block 7
+Nächster Schritt : 39
+Schrittbedingung : block 9
+Step 35
+Nächster Schritt : 37
+Schrittbedingung : block 11
+Bedingter Schritt : 38
+Step 36
+Job : Timer 3000 ms
+Nächster Schritt : 44
+Schrittbedingung : timer
+Step 37
+Job : Lok BR 58 SPEED 5 BACKWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 36
+Schrittbedingung : contakt 4
+Step 38
+Job : Rückgabe Block 9
+Job : Anforderung Block 7
+Nächster Schritt : 40
+Schrittbedingung : without
+Step 39
+Job : Timer 3000 ms
+Nächster Schritt : 35
+Schrittbedingung : timer
+Step 40
+Job : Rückgabe Block 10
+Nächster Schritt : 41
+Schrittbedingung : without
+Step 41
+Job : Rückgabe Block 11
+Nächster Schritt : 42
+Schrittbedingung : without
+Step 42
+Job : Rückgabe Block 12
+Nächster Schritt : 43
+Schrittbedingung : without
+Step 43
+Nächster Schritt : 32
+Schrittbedingung : without
+Step 44
+Job : Magnetartikel 50 rot
+Nächster Schritt : 45
+Schrittbedingung : contakt 3
+Step 45
+Job : Rückgabe Block 9
+Job : Lok BR 58 SPEED 10 BACKWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 46
+Schrittbedingung : contakt 13
+Step 46
+Job : Lok BR 58 SPEED 3 BACKWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 47
+Schrittbedingung : contakt 11
+Step 47
+Job : Rückgabe Block 10
+Nächster Schritt : 48
+Schrittbedingung : contakt 9
+Step 48
+Job : Rückgabe Block 11
+Job : Magnetartikel 60 rot
+Nächster Schritt : 49
+Schrittbedingung : contakt 7
+Step 49
+Job : Lok BR 58 SPEED 1 BACKWARD ON OFF OFF OFF OFF 
+Nächster Schritt : 50
+Schrittbedingung : contakt 6
+Step 50
+Job : Lok BR 58 SPEED 0 FORWARD OFF OFF OFF OFF OFF 
+Job : Rückgabe Block 12
+Job : Timer 40000 ms
+Nächster Schritt : 1
+Schrittbedingung : timer

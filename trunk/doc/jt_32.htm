@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Der Lokeditor
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="lokedit"><H2>3.2 Der Lokeditor</H2></A>
+<H3>3.2.1 Dialog: <A name="lokdialog">Lokdatei editieren</A></H3>
+Hier w&auml;hlen Sie bitte, was Sie tun m&ouml;chten. Wollen Sie einen
+Eintrag &auml;ndern oder l&ouml;schen, w&auml;hlen Sie bitte aus dem
+Klappmen&uuml;e die gew&uuml;nschte Lok.
+<H3>3.2.2 <A name="lokname"> Bezeichnung </A></H3>
+Hier geben Sie bitte ein K&uuml;rzel ein als Namen f&uuml;r diese Lok.
+Damit dieser Name in allen Dialogen richtig angezeigt wird, sollte er aus
+max. 6 Zeichen bestehen.
+<H3>3.2.3 <A name="lokprotokoll"> Protokoll </A></H3>
+Hier geben Sie bitte das Digitalprotokoll an, mit dem diese Lok gesteuert
+werden soll. M&ouml;gliche Eintr&auml;ge:<br>
+<UL>
+<LI><P><B>L</B> Reserviert f&uuml;r Loconet
+</LI>
+<LI><P><B>M1</B> M&auml;rklin alt  (rel. FRU, 80 Adr., 1 Funkt., 14 FS)
+</LI>
+<LI><P><B>M2</B> M&auml;rklin neu  (abs. FRU, 80 Adr., 5 Funkt., 14 FS)
+</LI>
+<LI><P><B>M3</B> M2 erweitert (abs. FRU, 256 Adr., 5 Funkt., 28 FS)
+</LI>
+<LI><P><B>M4</B> M2 erweitert (abs. FRU, 256 Adr., 5 Funkt., 14 FS)
+</LI>
+<LI><P><B>M5</B> M2 erweitert nach M&auml;rklin (abs. FRU, 80 Adr, 5 Funkt., 27 FS)
+</LI>
+<LI><P><B>MF</B> altes M&auml;rklin Format f&uuml;r Funktionsdekoder
+</LI>
+<LI><P><B>NB</B> NMRA-DCC Basisprotokoll (abs. FRU, 7-bit-Adr., 14 FS)
+</LI>
+<LI><P><B>N1</B> NMRA-DCC erweitert (abs. FRU, 7-bit-Adr., 5/9/13 Funkt., 28 FS)
+</LI>
+<LI><P><B>N2</B> NMRA-DCC erweitert (abs. FRU, 7-bit-Adr., 5/9/13 Funkt., 128 FS)
+</LI>
+<LI><P><B>N3</B> NMRA-DCC erweitert (abs. FRU, 14-bit-Adr.,5/9/13 Funkt., 28 FS)
+</LI>
+<LI><P><B>N4</B> NMRA-DCC erweitert (abs. FRU, 14-bit-Adr., 5/9/13 Funkt., 128 FS)
+</LI>
+<LI><P><B>S</B> Reserviert f&uuml;r Selektrix
+</LI>
+<LI><P><B>PS</B> protocol by server, der Server bestimmt den Protokolltyp
+</LI>
+</UL>
+<H3>3.2.4 <A name="lokadresse"> Digitaladresse </A></H3>
+Hier tragen Sie bitte die Digitaladresse des Lokdekoders ein. M&ouml;gliche
+Werte: je nach <A href="#lokprotokoll">Protokoll</A>.
+<H3>3.2.5 <A name="lokanzfs"> Anzahl der Fahrstufen </A></H3>
+Dieser Wert wird von JTrain je nach <A href="#lokprotokoll">Protokoll</A>
+eingetragen. Er kann von Ihnen aber ge&auml;ndert werden.
+<H3>3.2.6 <A name="lokanzfu"> Anzahl der Funktionen </A></H3>
+Hier tragen Sie bitte ein, wieviele Sonderfunktionen JTrain bei diesem
+Dekoder f&uuml;r Sie verwalten soll. Zur Zeit werden vom Programm max. 4
+Sonderfunktionen unterst&uuml;tzt.
+<H3>3.2.7 <A name="lokacc_by_jt"> Beschleunigung durch JTrain </A></H3>
+Hier entscheiden Sie, ob die Beschleunigung/Verz&ouml;gerung der Lok vom
+Lokdekoder geregelt wird, oder ob JTrain das tun soll (insbesondere f&uuml;r
+&auml;ltere und/oder preiswerte Dekoder).
+<H3>3.2.8 <A name="lokacc"> Beschleunigung in ms/step </A></H3>
+Ist die <A href="#lokacc_by_jt"> Beschleunigung durch JTrain </A> eingeschaltet,
+tragen Sie bitte hier ein, wieviele Millisekunden JTrain warten soll, bevor
+die n&auml;chsth&ouml;here Fahrstufe als Befehl gesendet wird.
+<H3>3.2.9 <A name="lokdec"> Verz&ouml;gerung in ms/step </A></H3>
+Ist die <A href="#lokacc_by_jt"> Beschleunigung durch JTrain </A> eingeschaltet,
+tragen Sie bitte hier ein, wieviele Millisekunden JTrain warten soll, bevor
+die n&auml;chstniedrigere Fahrstufe als Befehl gesendet wird.
+<H3>3.2.10 <A name="lokmaxspeed"> H&ouml;chstgeschwindigkeit des
+Original</A></H3>
+Diese Angabe wird vom <A href="jt_4.htm#datnlok">Lokregler</A> verwendet zur
+Anzeige der Lokgeschwindigkeit, wenn die Schaltfl&auml;che -in km/h-
+gedr&uuml;ckt ist.
+</BODY>
+</HTML>
+

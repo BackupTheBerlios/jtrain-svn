@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Men&uuml; Datei
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="dat"><H2>4. Men&uuml; Datei</H2></A>
+Wird ein Lokregler oder ein Gleisbild ge&ouml;ffnet, wechselt JTrain in den
+Kommandomodus. Das Hauptfenster wird dann gr&uuml;n.<br>
+WICHTIG: Ab jetzt kann der Strom &uuml;ber das Men&uuml; 'Daemon' oder fast
+jederzeit schnell einfach mit der SPACE- (Leer-)taste abgeschaltet werden.
+<H3>4.1 <A name="datnlok">Neuer Lokregler</A></H3>
+Nach der Auswahl der zu steuernden Lok steht Ihnen ein neuer Lokregler zur
+Verf&uuml;gung. Sollte die Lok bereits von einem anderen Lokregler oder einer
+Automatik gesteuert werden, startet ein Lokregler, der nur zur Anzeige da
+ist.<br>
+Mit dem Schieberegler wird die Geschwindigkeit eingestellt. Die Funktionen
+werden mit den Schaltfl&auml;chen an/ausgeschaltet, so der Lokdekoder diese
+zur Verf&uuml;gung stellt und Sie sie im  <A href="jt_32.htm#lokedit">Lokeditor</A>
+angeschaltet haben.<br>
+Die Fahrtrichtung wird mit den beiden &auml;usseren unteren
+Schaltfl&auml;chen geschaltet. Ein Umschalten nicht aus dem Stillstand setzt
+zugleich die Geschwindigkeit auf 0.<br>
+Die Schaltfl&auml;che 'Stop' l&ouml;st den Notstop aus, so dieses vom
+Digitalprotokoll der Lok unterst&uuml;tzt wird. Ansonsten wird nur die
+Geschwindigkeit 0 ausgegeben.<br>
+Die Anzeige kann in Fahrstufen, in Prozent des Maximums oder in km/h
+erfolgen. F&uuml;r letzteres wird die im  <A href="jt_32.htm#lokedit">Lokeditor</A>
+angegebene H&ouml;chstgeschwindigkeit des Originals zur Berechnung
+herangezogen.<br>
+Die Anzeige zeigt das an, was vom Server auch tats&auml;chlich gesendet
+wurde. So kann bei eingeschalteter Beschleunigung durch JTrain die Ausgabe
+der Fahrstufen bis zum Erreichen der Endgeschwindigkeit gut beobachtet
+werden.
+<H3>4.2 <A name="datgb">Gleisbild</A></H3>
+Nach Anwahl dieses Men&uuml;punktes erscheint ein Datei-&ouml;ffnen-Dialog.
+Nach Auswahl des gew&uuml;nschten Gleisbildes wird dieses ge&ouml;ffnet.
+<H4>4.2.1 <A name="datgbuse">Bedienung</A></H4>
+WEICHEN und SIGNALE k&ouml;nnen von Hand gestellt werden, indem Sie mit der
+Maus angeklickt werden.<br>
+BL&Ouml;CKE werden angefordert oder freigegeben, indem ihr Blockfeld
+angeklickt wird. Sie haben 1 von 3 Zust&auml;nden:<br>
+-1- Block ist 'frei'= Blockfeld hat die Blockfarbe, rechts von der Blocknummer
+steht nichts im Blockfeld: Kann einer Anforderung nachgekommen werden, weil
+kein anderer Block, der ein gemeinsames Gleiselement mit ihm oder mit seinem
+Zusatzblock hat, 'zugeteilt' ist und (so vorhanden) der Zusatzblock ebenfalls
+frei ist, wechselt der Block in den Zustand 'zugeteilt'. Kann der Anforderung
+nicht sofort nachgekommen werden, wechselt der Block in den Zustand
+'angefordert'.<br>
+-2- Block ist 'angefordert' = Blockfeld hat die Blockfarbe, rechts neben der
+Blocknummer erscheint der Name des Ersten in der Liste der Vorbestellungen;
+dieser Zustand tritt ein, wenn ein 'freier' Block angefordert wird, aber nicht
+zugeteilt werden kann, weil z.B. ein kreuzender Block 'zugeteilt' ist:
+Beim Anklicken wird die Anforderung in die Vorbestellungsliste des Blocks
+eingetragen, es erscheint (falls noch nicht vorhanden)'++' rechts im
+Blockfeld.<br>
+-3- Block ist 'zugeteilt' = Blockfeld ist rot, der Name des Besitzers steht
+rechts neben der Blocknummer im Blockfeld, weitere Anforderungen sind durch
+'++' angezeigt. Wird ein solcher Block angeklickt,
+wird er 'frei', falls keine weitere Anforderung vorliegt. Ansonsten wechselt
+er den Besitzer, der n&auml;chste in der Liste der Vorbestellungen
+erh&auml;lt den Besitz. Ist dieser Block ein Zusatzblock, wechselt er von
+'frei' dann gleich wieder auf 'zugeteilt', wenn der Block, dessen Zusatzblock
+er ist, sich im Zustand 'angefordert' befindet.<br>
+In Wirklichkeit ist es noch komplexer, da ein Zusatzblock anders reagiert als
+ein 'normaler' Block. Das muss man aber nicht v&ouml;llig durchschauen, um die
+Blocksteuerung benutzen zu k&ouml;nnen.<br>
+TIP: Mit Rechtsklick auf ein Blockfeld werden die zu diesem Block
+geh&ouml;renden Gleisbildelemente neu in Blockfarbe dargestellt.
+<H4>4.2.2 <A name="datfs">Men&uuml; Fahrstrassen</A></H4>
+W&auml;hlen Sie 'Fahrstrassen anfordern', erhalten Sie einen Dialog, in dem
+Sie aus dem Klappmen&uuml; die gew&uuml;nschte Fahrstrasse aussuchen. Diese
+Fahrstrasse wird dann angefordert und kann, wenn die enthaltenen Bl&ouml;cke
+der Fahrstrasse 'zugeteilt' sind, benutzt werden. Die Bl&ouml;cke, die Sie
+nicht mehr ben&ouml;tigen, da der Zug sie verlassen hat, m&uuml;ssen Sie von
+Hand freigeben, oder: <br>
+Eine angeforderte Fahrstrasse kann auch als ganzes freigegeben werden
+('Fahrstrasse freigeben').
+<H4>4.2.3 <A name="datauto">Automatik</A></H4>
+M&ouml;chten Sie eine Automatik starten, so sollten Sie dies aus einem
+Gleisbild tun, das alle Bl&ouml;cke enth&auml;lt, die auch die Automatik
+benutzt.<br>
+W&auml;hlen Sie 'Automatik starten', erhalten Sie einen Dialog mit einem
+Klappmen&uuml;. Dort ist es m&ouml;glich, alle Automatiken (=Ketten) zu
+w&auml;hlen oder eine einzelne.<br>
+Jede Kette erh&auml;lt ein kleines Kontrollfenster mit den Schaltern 'Start',
+'Stop', 'Abbruch' und 'Ende' sowie ein Fenster, das den Ablauf der Kette
+anzeigt.<br>
+'Start' startet die Kette bei Step 1.<br>
+'Stop' h&auml;lt die Kette am Ende an, d.h., wenn Sie wieder bei Step 1
+angelangt ist.<br>
+'Abbruch' bricht die Kette sofort da ab, wo sie gerade ist.<br>
+'Ende' beendet die Kette und schliesst die beiden Fenster.<br>
+Das Ablauffenster -'Stepfl&auml;che' genannt- kann nicht geschlossen, nur
+ausgeblendet werden und dient -ausser der Optik- vor allem zur Fehlersuche;
+Sie w&auml;ren wahrscheinlich der Erste, dessen Kette von Anfang an
+fehlerfrei l&auml;uft.<br>
+TIP: Mit Rechtsklick auf einen Step auf der Stepfl&auml;che k&ouml;nnen Sie
+sich jederzeit die Eigenschaften dieses Step ansehen.
+<H3>4.3 <A name="datend">Beenden</A></H3>
+Hier kann JTrain 'sauber' beendet werden.
+</BODY>
+</HTML>

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=JTrain
+GenericName=Digital Model Railroad Controller
+Type=Application
+Icon=jt11_16.xpm
+TryExec=jtrain
+Exec=jtrain %f
+Terminal=0
+
+Categories=Electronics

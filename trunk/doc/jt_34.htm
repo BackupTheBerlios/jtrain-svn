@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Der Blockeditor
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="bledit"><H2>3.4 Der Blockeditor</H2></A>
+<H3>3.4.1 <A name="bleinleit">Einleitung</A></H3>
+siehe: <A href="jt_1.htm#block">1.3.2. Ebene 2: Blockstrecken</A>
+Die Nummer eines neuen Blocks wird von JTrain nach den schon existierenden
+Bl&ouml;cken ermittelt. Sie gilt programmweit, das heisst in allen
+Gleisbildern. Deshalb sollte ein neuer Block unbedingt in einem Gleisbild
+angelegt werden, in dem er komplett dargestellt werden kann.<br>
+Die Einteilung des Gleisbildes in Bl&ouml;cke sollte weitgehend fertig sein,
+bevor Sie den Blockeditor starten.
+<H3>3.4.2 <A name="bluse">Bedienung</A></H3>
+<H4>3.4.2.1 Neuer Block (Men&uuml; Block)</H4>
+Bei der Wahl dieses Men&uuml;punktes startet ein Assistent, der sich auch
+nicht abschalten l&auml;sst;-)<br>
+Als erstes werden Sie zur Wahl einer Farbe aufgefordert, Die Farben sollen
+Ihrer Orientierung dienen und der Zuordnung Blockfeld (die Anzeige- und
+Schaltfl&auml;che) --&gt; Gleis(bild)elemente.<br>
+Im zweiten Schritt klicken Sie bitte das erste Element Ihres neuen Blocks an.
+Denken Sie bitte daran, dass jeder Block eine Richtung hat, nach der sich
+u.a. die Schaltung der im Block liegenden Signale richtet. Also ist das
+erste Element das Element, das der Zug zuerst erreicht.<br>
+Im dritten Schritt klicken sie das letzte Gleisbildelement des neuen Blocks
+an. AUSNAHME: Falls der Block &uuml;ber mehrere Weichen hinwegf&uuml;rt
+und es mehrere m&ouml;gliche Verbindungswege zwischen Anfangs- und Endpunkt
+gibt, k&ouml;nnen Sie den Weg auch st&uuml;ckeln; Sie klicken jeweils immer
+das in Fahrtrichtung hinter der n&auml;chsten Weiche befindliche Gleiselement
+an. Optisch gibt JTrain durch Einf&auml;rben der Elemente zu erkennen, was
+bis jetzt zum Block geh&ouml;rt.<br>
+ACHTUNG: Selbstverst&auml;ndlich m&uuml;ssen Start und Ziel im Gleisbild
+direkt verbunden sein; sonst steht der Autorouter vor einer unl&ouml;sbaren
+Aufgabe!<br>
+Mit dem vierten Schritt, einem Rechts-oder Doppelklick in die freie
+Landschaft, wird das Routen abgeschlossen. JTrain 'weiss' jetzt bereits,
+welche Weichen und Signale gestellt werden m&uuml;ssen.<br>
+Im f&uuml;nften Schritt bewegen Sie das Blockfeld, das sich noch links oben
+befindet, an einen Platz Ihrer Wahl. Sie haben die Wahl: Ziehen mit der
+Maus, grosse Schritte im Raster mit gedr&uuml;ckter Ctrl- bzw.Strg-Taste und
+den Pfeiltasten oder pixelgenau mit den Pfeiltasten. Dieser Schritt wird mit
+der ESC- oder ENTER-Taste abgeschlossen.<br>
+Im sechsten Schritt werden Sie nach einem Zusatzblock gefragt. Dies ist
+typischerweise der n&auml;chste Streckenblock hinter einem Weichenblock, der
+ja ebenfalls frei sein muss, damit der Weichenblock befahren werden kann. Ist
+dieser Block noch nicht vorhanden, erhalten Sie eine Erinnerung.<br>
+Im siebenten Schritt werden Sie gefagt, ob dieser Block beim Start des
+Programms belegt ist. Falls ja, werden Sie nach einem K&uuml;rzel f&uuml;r die
+Startbelegung gefragt. Soll hier eine Automatikfahrt starten, muss hier GENAU
+der Name dieser Fahrt eingetragen werden, sonst kann die Automatik diesen
+Block nicht freischalten. Bitte nicht mehr als 6 Zeichen!<br>
+<H4><A name="bldlg">3.4.2.2 Block editieren (Men&uuml; Block)</A></H4>
+Nach der Wahl dieses Men&uuml;punktes &ouml;ffnet sich ein Dialog. Hier geben
+Sie bitte die Nummer des zu &auml;ndernden Blocks ein. Danach w&auml;hlen Sie
+bitte die Aktion aus und best&auml;tigen mit 'OK'.<br>
+AKTION 'Block hier entfernen': entfernt diesen Block nur aus diesem Gleisbild,
+in allen anderen und Automatiken verbleibt er (so dort benutzt);<br>
+AKTION 'Gleiselement hinzu/wegnehmen': hier k&ouml;nnen Gleisbildelemente
+einzeln zu diesem Block hinzugef&uuml;gt werden. Dies ist praktisch bei
+seitlichen Anschl&uuml;ssen an andere Gleisbilder oder zum Andeuten von
+geschlossenen Kreisen (siehe Beispiel, Block 10).<br>
+ACHTUNG: Weichen oder Signale k&ouml;nnen so <i>nicht</i> zum Block
+hinzugef&uuml;gt werden, sie werden zwar in der Blockfarbe dargestellt, aber
+<i>nicht</i> vom Block geschaltet.
+<H4><A name="bldel">3.4.2.3 Block l&ouml;schen (Men&uuml; Block)</A></H4>
+Dieser Men&uuml;punkt entfernt einen Block total aus dem gesamten Programm.
+Deshalb MUSS UNBEDINGT VORHER dieser Block aus allen anderen Gleisbildern
+(mittels 'Block editieren: Block hier entfernen') und aus allen Fahrstrassen
+und Automatiken entfert werden.
+<H4><A name="bldat">3.4.2.4 Men&uuml; Datei)</A></H4>
+Es sollte jweils das geschehen, was man erwartet. Auch hier sind wie im
+<A href="jt_33.htm#gbedit">Gleisbildeditor</A> f&uuml;r Dateinamen nur die
+Buchstaben a-z, A-Z gestattet.
+<H4><A name="blsym">3.4.2.5 Men&uuml; Symbole)</A></H4>
+Auch hier k&ouml;nnen Sie die Aufl&ouml;sung der Darstellung wechseln
+(siehe <A href="jt_33.htm#symbolsize">Gleisbildeditor</A>).
+<H4><A name="blsize">3.4.2.6 Men&uuml; Gleisbildgr&ouml;sse)</A></H4>
+Hier kann die Gr&ouml;sse des Gleisbildes der tats&auml;chlich benutzten
+Fl&auml;che angepasst werden. Ist links oder oben ungenutzer Platz von mehr
+als einem Element, wird das Gleisbild verschoben. Ungenutzter Raum unten und
+rechts wird abgeschnitten. Das ist nicht immer sofort sichtbar,
+sp&auml;testens beim n&auml;chsten &Ouml;ffnen des Gleisbildes aus dem
+<A href="jt_4.htm#datgb">Men&uuml; Datei</A>.<br>
+Ich empfehle, danach das ver&auml;nderte Gleisbild unter einem anderen Namen
+zu speichern.
+</BODY>
+</HTML>
+

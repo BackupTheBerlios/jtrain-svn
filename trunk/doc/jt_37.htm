@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Der Eigenschaftseditor
+</TITLE>
+</HEAD>
+<BODY bgcolor=F0E68C>
+<A name="propedit"><H2>3.7 Der Eigenschaftseditor</H2></A>
+<H3>3.7.1 <A name="propeinleit">Einleitung</A></H3>
+Hier werden globale Einstellungen f&uuml;r JTrain konfiguriert. Zur Zeit
+sind das:
+<UL>
+<LI>Name und Portnummer des Servercomputers</LI>
+<LI>Das Aussehen von JTrain</LI>
+<LI>Die Sprache</LI>
+<LI>Soll JTrain den Abschaltbefehl f&uuml;r Magnetdekoder senden?</LI>
+</UL>
+ACHTUNG: Nach dem &Ouml;ffnen zeigt der Editor <i>nicht</i> die momentan geltenden
+Einstellungen, sondern die Standardvorgaben!<br>
+ACHTUNG: Die ge&auml;nderten Einstellungen werden erst nach einem Neustart von
+JTrain &uuml;bernommen!
+<H3>3.7.2 <A name="propdetail">Im Einzelnen</A></H3>
+<H4>3.7.2.1 <A name="propserver">Name des Servercomputers</A></H4>
+Hier geben Sie den Namen des Computers ein, auf dem der
+<A href="jt_2.htm#srcp2">SRCP-Server</A>
+l&auml;uft. Ist das derselbe Rechner, auf dem auch JTrain installiert ist,
+kann 'localhost' stehen bleiben. Ihr Rechner muss diesen Namen aufl&ouml;sen
+k&ouml;nnen. Alternativ kann auch die IP- Adresse des Servercomputers
+eingetragen werden.
+<H4>3.7.2.2 <A name="propport">Portnummer des SRCP- Servers</A></H4>
+Hier kann die Portnummer ge&auml;ndert werden, auf der JTrain mit dem
+<A href="jt_2.htm#srcp2">SRCP- Server</A> Verbindung auzunehmen sucht.
+Normalerweise sollten Sie hier nichts zu &auml;ndern haben, da 12345 der
+'Standardport' f&uuml;r <A href="jt_1.htm#srcp1">SRCP</A> ist.
+<H4>3.7.2.3 <A name="proplook">JTrains`s neue Kleider</A></H4>
+Hier l&auml;sst sich das 'Look&Feel' umschalten. 'Metal' ist der JAVA-eigene
+Standard, 'Windows' l&auml;sst JTrain wie ein Windows- Programm aussehen
+und 'Motif' entsprechend.<br>
+Je nach Ihrer Umgebung stehen Ihnen wahrscheinlich nicht alle 3 Varianten
+zur Verf&uuml;gung. Sollte etwas nicht gehen, werden Sie nach dem
+Umschaltversuch benachrichtigt und JTrain macht unver&auml;ndert weiter.
+<H4>3.7.2.4 <A name="proplang">Sprache</A></H4>
+Hier k&ouml;nnen Sie zur Zeit zwischen der deutschen Sprache w&auml;hlen.
+Eine englische Version ist geplant und begonnen (leider seeehr
+zeitaufw&auml;ndig).
+<H4>3.7.2.5 <A name="propcom">Abschaltbefehl f&uuml;r MA senden</A></H4>
+Hier stellen Sie ein, ob JTrain den Abschaltbefehl f&uuml;r
+Magnetartikeldekoder senden soll. Zur Zeit wird dieser Befehl von den
+<A href="jt_2.htm#srcp2"> SRCP-Servern</A> f&uuml;r die Intellibox selber
+generiert. Beim srcpd darf er sogar gar nicht gesendet werden.<br>
+ACHTUNG: Bei anderen Konfigurationen MUSS eventuell der Abschaltbefehl
+gesendet werden. Wenn Sie hier experimentieren, bitte immer mit der Hand am
+Notaus!
+</BODY>
+</HTML>
